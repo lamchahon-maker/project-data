@@ -35,7 +35,7 @@ st.sidebar.title("Navigation")
 page = st.sidebar.radio("Go to", ["Dashboard", "Data Quality Audit", "Data Cleaning", "Data History Log"])
 
 # --- Load Data ---
-DATA_FILE = "crash_data_v2.csv"
+DATA_FILE = "1_crash_reports.csv"
 
 # แก้ไขจุดนี้: บังคับให้อ่านแบบแยกด้วย semicolon (;) และจัดการเรื่อง encoding เพื่อรองรับภาษาไทย/ตัวอักษรพิเศษ
 try:
@@ -183,4 +183,5 @@ elif page == "Data Cleaning":
         with col2:
             st.metric("Missing Values", f"{current_df[target_col].isnull().sum()}")
             st.dataframe(current_df[[target_col]].head(10), use_container_width=True)
+
 
