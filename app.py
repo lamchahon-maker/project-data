@@ -272,3 +272,9 @@ elif page == "Data Cleaning":
              st.sidebar.text(f"{len(st.session_state['cleaning_log'])-i}. {step}")
     else:
         st.sidebar.info("No steps recorded yet.")
+
+df = pd.read_csv('1_crash_reports.csv', sep=';') 
+
+# หรือถ้าไม่แน่ใจว่าใช้อะไร ให้ลองตัวนี้ (มันจะพยายามเดาให้เอง):
+df = pd.read_csv('1_crash_reports.csv', sep=None, engine='python')
+
